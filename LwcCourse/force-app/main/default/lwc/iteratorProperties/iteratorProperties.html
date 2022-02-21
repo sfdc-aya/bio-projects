@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Iterator Loop">
+        <div class="slds-var-m-around_medium">
+
+        <template iterator:ceo={ceoList}>
+            <div key={ceo.value.Id}>
+                <ul class="slds-has-dividers_around-space">
+                  
+                    <template if:true={ceo.first}>
+                        <div class="slds-box slds-theme_shade">
+                            <strong>
+                                List of top companies and their CEOs
+                            </strong>
+                        </div>
+                   </template>
+
+                    <li class="slds-item">
+                        <strong>{ceo.value.company}</strong>
+                        <p>  {ceo.value.name}</p>
+                    </li>
+
+                    <template if:true={ceo.last}>
+                        <div class="slds-box slds-theme_shade">
+                            <strong>
+                                Thanks for reviewing the list!
+                            </strong>
+                        </div>
+                    </template>
+                </ul>
+           </div>
+        </template>
+    
+        </div>
+    </lightning-card>
+</template>
